@@ -1,0 +1,8 @@
+group = 'com.diligrp'
+archivesBaseName = 'icard-fund'
+
+dependencies {
+    compile project(':icard-shared')
+    compile project(':icard-admin')
+    compile project(':icard-rpc')
+}

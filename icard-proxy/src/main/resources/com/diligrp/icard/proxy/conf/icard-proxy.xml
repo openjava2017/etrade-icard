@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Application environment setting, please never change the name -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:com/diligrp/icard/rpc/conf/icard-rpc.properties</value>
+                <value>classpath:com/diligrp/icard/shared/conf/icard-shared.properties</value>
+                <value>classpath:com/diligrp/icard/card/conf/icard-card.properties</value>
+                <value>classpath:com/diligrp/icard/fund/conf/icard-fund.properties</value>
+                <value>classpath:com/diligrp/icard/proxy/conf/icard-proxy.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <import resource="classpath:com/diligrp/icard/rpc/conf/icard-rpc.xml"/>
+    <import resource="classpath:com/diligrp/icard/shared/conf/icard-shared.xml"/>
+    <import resource="classpath:com/diligrp/icard/card/conf/icard-card.xml"/>
+    <import resource="classpath:com/diligrp/icard/fund/conf/icard-fund.xml"/>
+</beans>

@@ -1,0 +1,6 @@
+group = 'com.diligrp'
+archivesBaseName = 'icard-rpc'
+
+dependencies {
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.4'
+}
