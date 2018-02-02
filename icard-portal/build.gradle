@@ -10,6 +10,7 @@ dependencies {
     compile group: 'com.github.httl', name: 'httl-springmvc', version: '1.0.11'
     compile group: 'io.protostuff', name: 'protostuff-core', version: '1.5.6'
     compile group: 'io.protostuff', name: 'protostuff-runtime', version: '1.5.6'
+    compile files('src/main/webapp/WEB-INF/lib/etrade-oauth-1.0.0.jar')
     runtime "org.logback-extensions:logback-ext-spring:0.1.4"
 
     compile project(':icard-card')

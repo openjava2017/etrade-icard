@@ -4,7 +4,7 @@
 
 <mapper namespace="com.diligrp.icard.core.dao.ISequenceKeyDao">
 
-    <resultMap id="PersistentKeyMap" type="com.diligrp.icard.core.model.PersistentSequenceKey">
+    <resultMap id="PersistentKeyMap" type="com.diligrp.icard.shared.domain.PersistentSequenceKey">
         <id column="id" property="id"/>
         <result column="key" property="key"/>
         <result column="start_with" property="startWith"/>

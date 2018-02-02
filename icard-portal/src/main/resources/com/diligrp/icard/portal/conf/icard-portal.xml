@@ -20,21 +20,37 @@
     </bean>
     <!-- Distributed Session Support Start -->
 
-    <bean id="timeoutSessionFilter" class="com.diligrp.icard.portal.session.UserSessionTimeoutFilter">
+    <bean id="timeoutSessionFilter" class="com.diligrp.etrade.oauth.session.UserSessionTimeoutFilter">
         <property name="redirectUrl" value="/"/>
     </bean>
 
-    <bean id="distributedSessionFilter" class="com.diligrp.icard.portal.session.DistributedSessionFilter">
+    <bean id="distributedSessionFilter" class="com.diligrp.etrade.oauth.session.DistributedSessionFilter">
         <property name="sessionManager" ref="sessionManager"/>
     </bean>
 
-    <bean id="sessionManager" class="com.diligrp.icard.portal.session.DistributedSessionManager">
+    <bean id="sessionManager" class="com.diligrp.etrade.oauth.session.DistributedSessionManager">
         <property name="sessionRepository" ref="sessionRepository"/>
         <property name="maxInactiveInterval" value="${icard.session.maxInactiveInterval}"/>
     </bean>
 
-    <bean id="sessionRepository" class="com.diligrp.icard.portal.session.RedisSessionRepository">
-        <property name="dataSource" ref="jedisDataSource"/>
+    <bean id="sessionRepository" class="com.diligrp.etrade.oauth.session.RedisSessionRepository">
+        <property name="dataSource" ref="sessionDataSource"/>
+    </bean>
+
+    <bean id="sessionDataSource" class="com.diligrp.etrade.oauth.session.SimpleJedisDataSource" destroy-method="close">
+        <property name="redisHost" value="${redis.host}"/>
+        <property name="redisPort" value="${redis.port}"/>
+        <property name="blockWhenExhausted" value="${redis.blockWhenExhausted}"/>
+        <property name="lifo" value="${redis.lifo}"/>
+        <property name="minIdle" value="${redis.minIdle}"/>
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <property name="maxTotal" value="${redis.maxTotal}"/>
+        <property name="maxWaitMillis" value="${redis.maxWaitMillis}"/>
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+        <property name="testOnReturn" value="${redis.testOnReturn}"/>
+        <property name="testWhileIdle" value="${redis.testWhileIdle}"/>
+        <property name="numTestsPerEvictionRun" value="${redis.numTestsPerEvictionRun}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${redis.timeBetweenEvictionRunsMillis}"/>
     </bean>
 
     <!-- Distributed Session Support End -->
