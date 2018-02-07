@@ -5,7 +5,7 @@ import com.diligrp.icard.card.type.CardStatus;
 import com.diligrp.icard.card.type.CardType;
 import com.diligrp.icard.shared.domain.BaseDo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 卡片信息模型-icard_user_card
@@ -53,11 +53,11 @@ public class UserCardDo extends BaseDo {
     /**
      * 解锁时间
      */
-    private Date relieveLockTime;
+    private LocalDateTime relieveLockTime;
     /**
      * 解挂时间
      */
-    private Date relieveLossTime;
+    private LocalDateTime relieveLossTime;
     /**
      * 卡片序列号-换卡时自动加一
      */
@@ -159,19 +159,19 @@ public class UserCardDo extends BaseDo {
         this.cashPledge = cashPledge;
     }
 
-    public Date getRelieveLockTime() {
+    public LocalDateTime getRelieveLockTime() {
         return relieveLockTime;
     }
 
-    public void setRelieveLockTime(Date relieveLockTime) {
+    public void setRelieveLockTime(LocalDateTime relieveLockTime) {
         this.relieveLockTime = relieveLockTime;
     }
 
-    public Date getRelieveLossTime() {
+    public LocalDateTime getRelieveLossTime() {
         return relieveLossTime;
     }
 
-    public void setRelieveLossTime(Date relieveLossTime) {
+    public void setRelieveLossTime(LocalDateTime relieveLossTime) {
         this.relieveLossTime = relieveLossTime;
     }
 

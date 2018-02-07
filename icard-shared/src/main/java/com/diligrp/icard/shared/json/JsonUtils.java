@@ -7,6 +7,8 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.diligrp.icard.shared.type.IEnumType;
 import com.diligrp.icard.shared.util.ClassUtils;
 
+import java.time.LocalDateTime;
+
 /**
  * FastJson工具类
  *

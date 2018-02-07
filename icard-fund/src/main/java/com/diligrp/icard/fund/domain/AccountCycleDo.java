@@ -3,7 +3,7 @@ package com.diligrp.icard.fund.domain;
 import com.diligrp.icard.fund.type.CycleStatus;
 import com.diligrp.icard.shared.domain.BaseDo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 柜员对账周期数据模型-icard_account_cycle
@@ -31,15 +31,15 @@ public class AccountCycleDo extends BaseDo {
     /**
      * 账务开始时间
      */
-    private Date startTime;
+    private LocalDateTime startTime;
     /**
      * 账务结束时间
      */
-    private Date endTime;
+    private LocalDateTime endTime;
     /**
      * 平账时间
      */
-    private Date checkTime;
+    private LocalDateTime checkTime;
     /**
      * 账务状态
      */
@@ -93,27 +93,27 @@ public class AccountCycleDo extends BaseDo {
         this.cycleNo = cycleNo;
     }
 
-    public Date getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
-    public Date getCheckTime() {
+    public LocalDateTime getCheckTime() {
         return checkTime;
     }
 
-    public void setCheckTime(Date checkTime) {
+    public void setCheckTime(LocalDateTime checkTime) {
         this.checkTime = checkTime;
     }
 

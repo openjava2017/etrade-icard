@@ -5,7 +5,7 @@ import com.diligrp.icard.card.type.AccountType;
 import com.diligrp.icard.shared.domain.BaseDo;
 import com.diligrp.icard.shared.type.Gender;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 用户账户数据模型-icard_user_account
@@ -65,7 +65,7 @@ public class UserAccountDo extends BaseDo {
     /**
      * 最近登录时间
      */
-    private Date loginTime;
+    private LocalDateTime loginTime;
     /**
      * 密匙-用户密码加密或卡片内业务信息加密
      */
@@ -187,11 +187,11 @@ public class UserAccountDo extends BaseDo {
         this.pwdChanged = pwdChanged;
     }
 
-    public Date getLoginTime() {
+    public LocalDateTime getLoginTime() {
         return loginTime;
     }
 
-    public void setLoginTime(Date loginTime) {
+    public void setLoginTime(LocalDateTime loginTime) {
         this.loginTime = loginTime;
     }
 

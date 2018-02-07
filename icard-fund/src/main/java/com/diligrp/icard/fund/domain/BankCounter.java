@@ -4,7 +4,7 @@ import com.diligrp.icard.fund.type.FinanceStatus;
 import com.diligrp.icard.fund.type.FinanceType;
 import com.diligrp.icard.shared.domain.BaseDo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 银行存取款数据模型-icard_bank_counter
@@ -28,7 +28,7 @@ public class BankCounter extends BaseDo {
     /**
      * 存取款实际操作时间
      */
-    private Date applyTime;
+    private LocalDateTime applyTime;
     /**
      * 操作人员
      */
@@ -78,11 +78,11 @@ public class BankCounter extends BaseDo {
         this.amount = amount;
     }
 
-    public Date getApplyTime() {
+    public LocalDateTime getApplyTime() {
         return applyTime;
     }
 
-    public void setApplyTime(Date applyTime) {
+    public void setApplyTime(LocalDateTime applyTime) {
         this.applyTime = applyTime;
     }
 
